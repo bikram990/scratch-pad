@@ -1,0 +1,11 @@
+{{ $tag_id := anchorize (.Get "id")  }}
+{{ $height := .Get "height" | default 100 }}
+{{ $width := .Get "width" | default 100 }}
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.11.6"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script> -->
+<script type="text/javascript" src="{{"js/markmap.js" | relURL}}"></script>
+<main id="markmap-{{ $tag_id }}">
+    <svg id="{{ $tag_id }}" style="width: {{ $width }}px; height: {{ $height }}px"></svg>
+    <script>(async () => await markmapjs.render('#{{ $tag_id }}', {{ .Inner }} ))()</script>
+</main>

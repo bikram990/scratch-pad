@@ -1,0 +1,52 @@
+# baseURL = 'http://example.org/'
+relativeURLs = true
+languageCode = 'en-us'
+defaultContentLanguage = "en"
+
+title = 'Useful Commands'
+theme = ["hugo-theme-relearn"]
+metaDataFormat = "yaml"
+enableInlineShortcodes = true
+
+[params]
+    description = "Useful commands compiled by bikram990"
+    author = "Bikramjeet Singh"
+    showVisitedLinks = false
+    disableBreadcrumb = false
+    disableNextPrev = true
+    disableLandingPageButton = false
+    disableMermaid = false
+    customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
+    titleSeparator = "::"
+    themeVariant = "green"
+
+[Author]
+    name = "Bikramjeet Singh"
+
+[outputs]
+    home = [ "HTML", "RSS", "JSON"]
+
+[Languages]
+[Languages.en]
+    title = "Useful commands compiled by bikram990"
+    weight = 1
+    languageName = "English"
+    landingPageURL = "/introduction/"
+    landingPageName = "<i class='fas fa-home'></i> Home"
+
+    [[Languages.en.menu.shortcuts]]
+        name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+        identifier = "ds"
+        url = "https://github.com/bikram990/useful-commands"
+        weight = 10
+    
+    [[Languages.en.menu.shortcuts]]
+        name = "<i class='fas fa-fw fa-tags'></i> Tags"
+        url = "/tags/"
+        weight = 20
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 6
+    ordered = false
+    startLevel = 2

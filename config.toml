@@ -9,6 +9,7 @@ metaDataFormat = "yaml"
 enableInlineShortcodes = true
 
 [params]
+    editURL = "https://github.com/bikram990/useful-commands/edit/main/content/"
     description = "Useful commands compiled by bikram990"
     author = "Bikramjeet Singh"
     showVisitedLinks = false
@@ -24,7 +25,9 @@ enableInlineShortcodes = true
     name = "Bikramjeet Singh"
 
 [outputs]
-    home = [ "HTML", "RSS", "JSON"]
+    home = [ "HTML", "RSS", "JSON", "PRINT"]
+    section = ["HTML", "RSS", "PRINT"]
+    page = ["HTML", "RSS", "PRINT"]
 
 [Languages]
 [Languages.en]

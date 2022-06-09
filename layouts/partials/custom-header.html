@@ -1,3 +1,21 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-lib"></script>
+{{ if .Params.enable_twitter_meta }}
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@bikram990">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="twitter:creator" content="@bikram990">
+<meta name="twitter:image" content="{{ .Params.image }}"> 
+{{ end }}
+{{ if .Params.enable_opengraph_meta }}
+<!-- OpenGraph -->
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.example.com/" />
+<meta property="og:image" content="{{ .Params.image }}" />
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+{{ end }}
+{{ partial "victorhugo.html" . }}

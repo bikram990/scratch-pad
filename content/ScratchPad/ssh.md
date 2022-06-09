@@ -1,8 +1,13 @@
 ---
 title: "SSH"
 description: "Useful ssh commands"
-tags: ["ssh"]
-weight: 4
+tags: ["ssh", "ssh-keygen", "ssh-copy-id"]
+weight: 1
+Victor_Hugo: true
+Focus_Keyword: "ssh keygen"
+enable_twitter_meta: true
+image: https://www.improvutopia.com/wp-content/uploads/2016/02/empty.png.jpeg
+enable_opengraph_meta: true
 ---
 
 ## Generate SSh key

@@ -3,6 +3,11 @@ title: "Git"
 description: "Useful git commands"
 tags: ["git"]
 weight: 1
+Victor_Hugo: true
+Focus_Keyword: "git checkout clone"
+enable_twitter_meta: true
+image: https://www.improvutopia.com/wp-content/uploads/2016/02/empty.png.jpeg
+enable_opengraph_meta: true
 ---
 
 ## Cloning and getting remote changes
@@ -131,7 +136,7 @@ git branch --edit-description
 git push origin <newBranchName>
 ```
 {{% notice info %}}
---edit-description is for editing the commit message for the branch creation
+--edit-description is optional and for editing the commit message for the branch creation
 {{% / notice %}}
 
 ### Create a local branch from a specific commit
@@ -139,6 +144,12 @@ git push origin <newBranchName>
 git checkout <commitHash>
 git branch -b <newBranchName>
 git push origin <newBranchName>
+```
+
+### Create a local branch and track remote changes
+```sh
+git checkout -b <newBranchName>
+git push --set-upstream origin <remoteBranchName>
 ```
 
 ### Rename a local branch
@@ -172,6 +183,21 @@ git push origin :<branchName>
 ```
 
 ## Commit and Push
+
+### List staged files
+```sh
+git status
+```
+
+### View diff of a modified file
+```sh
+git diff <file>
+```
+
+### View diff of a staged file
+```sh
+git diff --cached <file>
+```
 
 ### Commit changes
 ```sh

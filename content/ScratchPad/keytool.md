@@ -2,7 +2,12 @@
 title: "Keytool"
 description: "Useful keytool commands"
 tags: ["keytool", "certificates", "keys"]
-weight: 3
+weight: 1
+Victor_Hugo: true
+Focus_Keyword: "keytool certificate keys"
+enable_twitter_meta: true
+image: https://www.improvutopia.com/wp-content/uploads/2016/02/empty.png.jpeg
+enable_opengraph_meta: true
 ---
 
 ## List
@@ -43,3 +48,13 @@ keytool -import -trustcacerts -keystore <path to keystore> -storepass <keystore 
     keytool -import -trustcacerts -keystore '/etc/pki/java/cacerts' -storepass 'changeit' -noprompt -alias 'mycert' -file 'cert.pem'
     ```
 {{% / expand %}}
+
+### Import/Convert a keystore into another
+```sh
+keytool -importkeystore  -srckeystore <src>.jks -destkeystore <dest>.p12 -deststoretype pkcs12
+```
+
+### Create a PKCS12 bag without a private key
+```sh
+keytool -import -file <cert>.crt -alias <alias for cert> -keystore <p12 cert file>.p12 -storetype PKCS12
+```

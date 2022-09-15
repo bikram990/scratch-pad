@@ -21,3 +21,9 @@ The above command will override the DNS server while quering `api.ipify.org`, bu
 
 You can view list of DNS servers [here](https://kb.adguard.com/en/general/dns-providers).
 {{% / notice %}}
+
+## Use curl to telnet to another machine
+
+```sh
+curl telnet://<ip address or hostname>:<port>
+```

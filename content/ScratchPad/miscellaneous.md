@@ -92,3 +92,14 @@ rsync -azP --delete --exclude="more-unwanted-*" <user>@<ip address>:<source>/ <d
     rsync -azP /path/to/dir ./
     ```
 {{% / expand %}}
+
+
+## Mount nfs filesystem
+
+```sh
+# List all the shares
+showmount -e <hostname or ip>
+
+# mount a share
+sudo mount -t nfs -o resvport,rw <hostname or ip>:<Path to share> <Path to mount>
+```

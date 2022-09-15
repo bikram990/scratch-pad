@@ -63,3 +63,11 @@ AGE-SECRET-KEY-17KP5RAUU7PE00X2CGLXJ63DSZLTC4E3YP6L7CQT0M72PS60QDN6QU4RVK6
 ```sh
 SOPS_AGE_KEY_FILE=<path to age key file> sops --age <public age key> <path to secrets>.sops.yml
 ```
+
+## Roles
+
+### Create a Role
+
+```sh
+ansible-galaxy init <role name>
+```

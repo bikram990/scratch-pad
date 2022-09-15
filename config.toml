@@ -9,7 +9,7 @@ metaDataFormat = "yaml"
 enableInlineShortcodes = true
 
 [params]
-    editURL = "https://github.com/bikram990/useful-commands/edit/main/content/"
+    editURL = "https://github.com/bikram990/scratch-pad/edit/main/content/"
     description = "Useful commands compiled by bikram990"
     author = "Bikramjeet Singh"
     showVisitedLinks = false

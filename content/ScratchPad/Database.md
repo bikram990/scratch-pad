@@ -79,6 +79,18 @@ SHOW GLOBAL VARIABLES LIKE 'long_query_time';
 SHOW GLOBAL VARIABLES LIKE 'log_output';
 ```
 
+### Set Id of last insert into variable
+
+```sql
+SET @variable_name = LAST_INSERT_ID();
+```
+
+### Set a value into variable from select
+
+```sql
+SELECT ID INTO @variable_name FROM `DATABASE`.`TABLE` WHERE NAME = "test";
+```
+
 ## MongoDB
 
 ### Connect
@@ -183,5 +195,39 @@ db.getCollection('<collection name>').find({<field name>: { $gt: "<my exp>" }});
 
 //Less than
 db.getCollection('<collection name>').find({<field name>: { $lt: "<my exp>" }});
+
+// Greater than equal to
+db.getCollection('<collection name>').find({<field name> : {$gte : new Date(new Date() - 30 * 60 * 60 * 24 * 1000)}});
+```
+
+#### Distinct
+
+```js
+db.getCollection('<collection name>').distinct("<field>", {<query>});
+```
+
+#### Undefined
+
+```js
+db.getCollection("<collection name>").find({<field>: {$type: 'undefined'}});
+```
+
+### Arrays
+
+```js
+// checks size equals
+db.getCollection("<collection name>").find({"<field>" : {$size: 1}});
+
+// doesn't work
+db.getCollection("<collection name>").find({"<field>" : {$where:`this.<field>.length >= 1`}});
+
+// works and checks if an element exists at index 1
+db.getCollection("<collection name>").find({"<field>.1" : {$exists: true}});
+```
+
+### Key inside an object
+
+```js
+db.getCollection("<collection name>").find({"<field>.<key>": "<my exp>"}).limit(1);
 ```
 

@@ -16,3 +16,16 @@ http://dolszewski.com/spring/how-to-bind-requestparam-to-object/
 ```properties
 management.endpoint.health.show-details=always
 ```
+
+- To switch profile
+    - Via command line
+
+    ```sh
+    --spring.profiles.active=dev
+    ```
+
+    - Via environment variable
+
+    ```sh
+    spring_profiles_active=dev
+    ```

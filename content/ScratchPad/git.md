@@ -389,13 +389,13 @@ git remote set-url origin <URL>
 ### Update user details
 ```sh
 git config --global user.name 'Your Name'
-git config --global user.email.you@somedomain.com
+git config --global user.email 'you@somedomain.com'
 ```
 
 ### Udate user details for a repo
 ```sh
 git config user.name 'Your Name'
-git config user.email.you@somedomain.com
+git config user.email 'you@somedomain.com'
 ```
 
 ### Add a file to a commit
@@ -406,6 +406,10 @@ git add <filePath>
 ### Un-stage a file (remove a file from the commit)
 ```sh
 git reset HEAD <filePath>
+
+# or
+
+git rm --cached <filePath>
 ```
 
 ### Un-stage all files (remove all files from the commit)
@@ -422,6 +426,23 @@ git rm -f <filePath>
 -f is for forcefully deleting the file
 {{% / notice %}}
 
+### Delete untracked files
+```sh
+# Dry run
+git clean -d -n
+
+# Delete
+git clean -d -f
+```
+
+### Delete untracked and ignored files
+```sh
+# Dry run
+git clean -d -n -x
+
+# Delete
+git clean -d -f -x
+```
 
 ### Change email id in already commited commits
 ```sh

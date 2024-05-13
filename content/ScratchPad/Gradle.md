@@ -14,8 +14,14 @@ enable_opengraph_meta: true
 
 ```groovy
 test {
-	testLogging {
-		events "PASSED", "SKIPPED", "FAILED", "STANDARD_OUT", "STANDARD_ERROR"
-	}
+  testLogging {
+    events "PASSED", "SKIPPED", "FAILED", "STANDARD_OUT", "STANDARD_ERROR"
+  }
 }
+```
+
+## Build a subproject from root level
+
+```bash
+./gradlew :<project name 1>:<action 1> :<project name 2>:<action 2>
 ```

@@ -18,4 +18,3 @@
 <meta property="og:image" content="{{ .Params.image }}" />
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
 {{ end }}
-{{ partial "victorhugo.html" . }}

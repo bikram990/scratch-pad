@@ -3,12 +3,20 @@ title: "Openssl"
 description: "Openssl commands: fetch server certificate, create self signed certificates, print certificate/csr details, convert certificates into different formats and more"
 tags: ["openssl", "certificates", "key", "pem", "der", "p12", "pfx"]
 weight: 1
-Victor_Hugo: true
-Focus_Keyword: "openssl certificate pem der p12 pfx key"
 enable_twitter_meta: true
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/OpenSSL_logo.svg/469px-OpenSSL_logo.svg.png
 enable_opengraph_meta: true
 ---
+
+## Keys
+
+```sh
+openssl genrsa -out keypair.pem 2048
+```
+
+```sh
+openssl rsa -in keypair.pem -pubout -out publickey.crt
+```
 
 ## Fetch Server SSL certificate
 
@@ -73,6 +81,21 @@ openssl s_client -showcerts -servername <server hostname> -connect <server hostn
     ```sh
     openssl x509 -signkey <key file>.key -in <csr file>.csr -req -days 365 -out <certificate file>.crt
     ```
+
+### Self Signed Certificate using single command
+
+```sh
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/CN=<cn>"
+```
+
+```sh
+openssl req -x509 -nodes -days 3650 \
+  -newkey rsa:2048 \
+  -keyout key.pem \
+  -out cert.pem \
+  -subj "/CN=<cn>" \
+  -addext "subjectAltName = DNS:host1, DNS:host2, DNS:host3, DNS:host4, IP:10.10.10.10"
+```
 
 ### Certificate from Self Signed Root CA
 

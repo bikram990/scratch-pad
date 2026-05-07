@@ -3,8 +3,6 @@ title: "Git"
 description: "Useful git commands"
 tags: ["git"]
 weight: 1
-Victor_Hugo: true
-Focus_Keyword: "git checkout clone"
 enable_twitter_meta: true
 image: https://www.improvutopia.com/wp-content/uploads/2016/02/empty.png.jpeg
 enable_opengraph_meta: true

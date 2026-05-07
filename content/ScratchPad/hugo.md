@@ -3,8 +3,6 @@ title: "Hugo"
 description: "Useful hugo commands"
 tags: ["hugo"]
 weight: 1
-Victor_Hugo: true
-Focus_Keyword: "hugo theme site"
 enable_twitter_meta: true
 image: https://www.improvutopia.com/wp-content/uploads/2016/02/empty.png.jpeg
 enable_opengraph_meta: true
@@ -35,8 +33,10 @@ hugo new --kind <template name stored in archetypes> <where to create under cont
 ```
 
 {{% expand Example %}}
+
 - for directory structure is like following
-    ```
+  
+    ```yaml
     - archetypes
         - _default.md
         - first_template.md
@@ -52,6 +52,7 @@ hugo new --kind <template name stored in archetypes> <where to create under cont
             - index.md
     - ...
     ```
+
 - use `hugo new --kind group_template posts/second` to create all the subtemplates under new post `second`
 - use `hugo new --kind first_template blogs/first` to create `first.md` under `blogs`
 - use `hugo new --kind chapter intro` to create a new `chapter` under `content`, chapter is a special kind and it will use `_default.md` as bas template if available

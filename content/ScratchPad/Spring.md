@@ -3,8 +3,6 @@ title: "Java/Spring"
 description: "Java or Spring quick reference and links"
 tags: ["spring", "java"]
 weight: 1
-Victor_Hugo: true
-Focus_Keyword: "java spring"
 enable_twitter_meta: true
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/OpenSSL_logo.svg/469px-OpenSSL_logo.svg.png
 enable_opengraph_meta: true
